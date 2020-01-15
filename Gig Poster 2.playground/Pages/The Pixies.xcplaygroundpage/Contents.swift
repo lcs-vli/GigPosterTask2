@@ -31,7 +31,7 @@ let beige = Color(hue: 69, saturation: 6, brightness: 87, alpha: 100)
 
 //set the canvas colour
 canvas.fillColor = pink
-canvas.drawRectangle(at: Point(x: 0,y: 0), width: 400, height: 400)
+canvas.drawRectangle(at: Point(x: 0,y: 0), width: 400, height: 600)
 
 
 //draw the square in the bottom left corner
@@ -60,6 +60,7 @@ for rentangleXPosition in stride(from: 0, through: 400, by: 400){
 
 //draw the pink block
 canvas.drawShapesWithFill = true
+canvas.drawShapesWithBorders = false
 canvas.fillColor = pink
 canvas.drawRectangle(at: Point(x: 0,y: 400), width: 400, height: 200)
 
@@ -68,13 +69,18 @@ canvas.textColor = beige
 canvas.drawText(message: "the runaways", at: Point(x:15,y:410), size: 53)
 
 //print the lines above the title
+canvas.textColor = black
 canvas.drawText(message: "friday", at: Point(x:14,y:550), size: 10)
 canvas.drawText(message: "august 19 1977", at: Point(x:14,y:535), size: 10)
 canvas.drawText(message: "tickets $4.50", at: Point(x:14,y:520), size: 10)
-canvas.drawText(message: "at the rat", at: Point(x:270,y:550), size: 10)
-canvas.drawText(message: "528 commonwealth", at: Point(x:270,y:535), size: 10)
-canvas.drawText(message: "boston, mass.", at: Point(x:270,y:520), size: 10)
+canvas.drawText(message: "with", at: Point(x:120,y:550), size: 10)
+canvas.drawText(message: "special guests", at: Point(x:120,y:535), size: 10)
+canvas.drawText(message: "wolfgang", at: Point(x:120,y:520), size: 10)
+canvas.drawText(message: "at ben h. lewis hall", at: Point(x:270,y:550), size: 10)
+canvas.drawText(message: "3443 orange st.", at: Point(x:270,y:535), size: 10)
+canvas.drawText(message: "riverside, california", at: Point(x:270,y:520), size: 10)
 
+/*
 //print the reference lines
 for shuline in 1...7{
     canvas.drawLine(from: Point(x: shuline * 50,y: 0), to: Point(x: shuline * 50,y: 600))
@@ -83,7 +89,7 @@ for shuline in 1...7{
 for hengline in 1...11{
     canvas.drawLine(from: Point(x: 0,y: hengline * 50), to: Point(x: 400,y: hengline * 50))
 }
-
+*/
 /*:
  ## Use Source Control
  
