@@ -29,8 +29,60 @@ let pink = Color(hue: 338, saturation: 83, brightness: 89, alpha: 100)
 let black = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
 let beige = Color(hue: 69, saturation: 6, brightness: 87, alpha: 100)
 
-// Begin your solution here...
+//set the canvas colour
+canvas.fillColor = pink
+canvas.drawRectangle(at: Point(x: 0,y: 0), width: 400, height: 400)
 
+
+//draw the square in the bottom left corner
+canvas.drawShapesWithFill = false
+canvas.drawShapesWithBorders = true
+canvas.borderColor = black
+for rentangleXPosition in stride(from: 0, through: 400, by: 400){
+    for rectangleYPosition in stride(from: 0, through: 400, by: 400){
+        for rectangle in stride(from: 30, through: 400, by: 110){
+            canvas.drawRectangle(at: Point(x:rentangleXPosition, y:rectangleYPosition), width: rectangle, height: rectangle, anchoredBy: AnchorPosition.centre, borderWidth: 14)
+        }
+    }
+}
+
+//draw the square in the bottom left corner
+canvas.drawShapesWithFill = false
+canvas.drawShapesWithBorders = true
+canvas.borderColor = beige
+for rentangleXPosition in stride(from: 0, through: 400, by: 400){
+    for rectangleYPosition in stride(from: 0, through: 400, by: 400){
+        for rectangle in stride(from: 80, through: 400, by: 110){
+            canvas.drawRectangle(at: Point(x:rentangleXPosition, y:rectangleYPosition), width: rectangle, height: rectangle, anchoredBy: AnchorPosition.centre, borderWidth: 14)
+        }
+    }
+}
+
+//draw the pink block
+canvas.drawShapesWithFill = true
+canvas.fillColor = pink
+canvas.drawRectangle(at: Point(x: 0,y: 400), width: 400, height: 200)
+
+//print title
+canvas.textColor = beige
+canvas.drawText(message: "the runaways", at: Point(x:15,y:410), size: 53)
+
+//print the lines above the title
+canvas.drawText(message: "friday", at: Point(x:14,y:550), size: 10)
+canvas.drawText(message: "august 19 1977", at: Point(x:14,y:535), size: 10)
+canvas.drawText(message: "tickets $4.50", at: Point(x:14,y:520), size: 10)
+canvas.drawText(message: "at the rat", at: Point(x:270,y:550), size: 10)
+canvas.drawText(message: "528 commonwealth", at: Point(x:270,y:535), size: 10)
+canvas.drawText(message: "boston, mass.", at: Point(x:270,y:520), size: 10)
+
+//print the reference lines
+for shuline in 1...7{
+    canvas.drawLine(from: Point(x: shuline * 50,y: 0), to: Point(x: shuline * 50,y: 600))
+}
+
+for hengline in 1...11{
+    canvas.drawLine(from: Point(x: 0,y: hengline * 50), to: Point(x: 400,y: hengline * 50))
+}
 
 /*:
  ## Use Source Control
